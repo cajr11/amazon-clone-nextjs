@@ -1,7 +1,6 @@
 import React from 'react'
 import Product from './Product'
 import discover from '../images/discover.jpeg'
-import Image from 'next/image'
 
 const ProductFeed = (props) => {
     return (
