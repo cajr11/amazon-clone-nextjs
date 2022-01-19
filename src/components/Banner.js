@@ -13,10 +13,10 @@ const Banner = () => {
             <div className='absolute w-full h-32 bg-gradient-to-t from-gray-100 to-transparent bottom-0 z-20'/>
             <Carousel autoPlay infiniteLoop showStatus={false} showIndicators={false} showThumbs={false} interval={5000}>
                 <div>
-                    <Image loading='lazy' src={GrahamNorton} alt='' />
+                    <img loading='lazy' src={GrahamNorton.src} alt='' />
                 </div>
                 <div>
-                   <Image loading='lazy' src={primeVideo} alt='' />
+                   <img loading='lazy' src={primeVideo.src} alt='' />
                 </div>
                 <div>
                     <Image loading='lazy' src={AmazonMusic} alt='' />
