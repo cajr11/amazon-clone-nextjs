@@ -3,6 +3,8 @@ import { StarIcon } from '@heroicons/react/solid';
 import Currency from 'react-currency-formatter';
 import primeLogo from '../images/prime-logo.png'
 import Image from 'next/image';
+import { useDispatch } from 'react-redux';
+import { addToBasket } from '../slices/basketSlice';
 
 const MAX_RATING = 5;
 const MIN_RATING = 1;
@@ -12,12 +14,28 @@ const myLoader = ({ src }) => {
 }
 
 const Product = (props) => {
+    const dispatch = useDispatch();
     const [rating] = useState(Math.floor(Math.random() * (MAX_RATING - MIN_RATING + 1)) + MIN_RATING);
     
     const [hasPrime] = useState(Math.random() < 0.5)
     
     const srcSplit = (props.image).split('/');
     const imgLast = srcSplit[srcSplit.length - 1]
+
+    const addToBasketHandler = () => {
+        const product = {
+            id: props.id,
+            title: props.title,
+            price: props.price,
+            description: props.description,
+            category: props.category,
+            image: props.image,
+            rating,
+            hasPrime
+        }
+
+        dispatch(addToBasket(product))
+    }
 
     return (
         <div className='relative flex flex-col  m-5 bg-white z-30 p-10'>
@@ -28,7 +46,7 @@ const Product = (props) => {
             <h4 className='my-3'>{props.title}</h4>
 
             <div className='flex'>
-                {Array(rating).fill().map((_, i) => <StarIcon className='h-5 text-yellow-500'/> )}
+                {Array(rating).fill().map((_, i) => <StarIcon key={i} className='h-5 text-yellow-500'/> )}
             </div>
 
             <p className='text-xs my-2 line-clamp-2'>{props.description}</p>
@@ -44,7 +62,7 @@ const Product = (props) => {
                 </div>
             )}
 
-            <button className='mt-auto button'>Add to Basket</button>
+            <button onClick={addToBasketHandler}className='mt-auto button'>Add to Basket</button>
         </div>
     )
 }
