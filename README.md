@@ -1,12 +1,9 @@
-# Installation Steps
-
-## Amazon e-commerce clone
-
+# Amazon e-commerce clone
 Amazon clone utilising concepts such as Authentication, SSR, Webhooks, etc.
 
-### Technologies
+### Stack
 
-<div style="display: flex; width: 200px">
+<div style="display: flex; width: 200px justify-content: space-between;">
     <img src="https://cdn.freebiesupply.com/logos/large/2x/react-1-logo-png-transparent.png" alt="redux" width="50" height="50">
     <img src="https://decodenatura.com/static/fb8aa1bb70c9925ce1ae22dc2711b343/nextjs-logo.png" alt="next.js" width="50" height="50">
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/2048px-Tailwind_CSS_Logo.svg.png" alt="tailwind css" width="50" height="50">
@@ -17,7 +14,9 @@ Amazon clone utilising concepts such as Authentication, SSR, Webhooks, etc.
 </div>
 
 
-## Using npm
+## Installation steps
+
+### Using npm
 
 Run commands
 
