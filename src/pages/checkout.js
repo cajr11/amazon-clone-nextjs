@@ -24,7 +24,7 @@ const Checkout = () => {
   const checkoutHandler = async () => {
     const stripe = await stripePromise;
 
-    // request to backend to create checkout session...
+    // request to backend to create checkout session
     const checkoutSession = await axios.post('/api/create-checkout-session', 
     {
       items: basketItems,
